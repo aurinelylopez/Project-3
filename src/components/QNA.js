@@ -12,12 +12,12 @@ class Qna extends Component{
 		this.componentDidMount = this.componentDidMount.bind(this)
 	}
 	componentDidMount(){
-		console.log(this.props.quiz)
-		axios.get("https://mighty-shelf-36224.herokuapp.com/")
+		// console.log(this.props.quiz) undefined
+		axios.get("http://localhost:2000/5")
 		.then((res) => {
-			console.log(res)
+			console.log(res.data)
 			this.setState({
-				quiz: res.data
+				quiz: res.data.data
 			}, () => {
 				console.log(this.state.quiz);
 			})
@@ -42,7 +42,6 @@ class Qna extends Component{
 			</div> 
 			
 			return(
-
 				<div>
 					{questionsNanswers.quiz}
 				</div>

@@ -7,6 +7,40 @@ import answerChoices from './components/answerchoices';
 import Test from './components/Test.jsx';
 import Everything from './components/Everything';
 import QNA from './components/QNA';
+import {
+  BrowserRouter as Router,
+  Route, 
+  Link,
+  NavLink,
+} from 'react-router-dom';
+
+let Home = () => { return <div>Home wya</div>} /*2 routes '/', n '/home'*/
+
+let About = () => { return <div>Aboutus</div>} /*when u click this pops up*/
+
+let Contacts = () => { return <div>Contacts us</div>}
+/* is Error a reserved word in react */
+let Errors = () => { return <div>Welcome to Mars👽👹</div>}
+
+let Nav = () => {
+  return (<ul id="target">
+          <li id="home"><NavLink to="/" className="wh">Homeskillet</NavLink></li>
+          </ul>)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class App extends Component {
 
@@ -128,14 +162,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <Router>
+        <div className="App">
+         <div className="App-header">
           <h2>BAO BAO BAO</h2>
+          </div>{this.state.result ? this.renderResult() : this.renderTest()}
+          <Everything />
+          <QNA />
+          <Link to="/home" className="target">Homework</Link>&nbsp;&nbsp;
+          <Link to="/about">About</Link>&nbsp;&nbsp;
+          <Link to="/contacts">Contacts</Link>&nbsp;&nbsp;
+
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/contacts" component={Contacts}/>
+        {/*  <Route component={Errors}/>*/}
         </div>
-        {this.state.result ? this.renderResult() : this.renderTest()}
-        <Everything />
-        <QNA />
-      </div>
+      </Router>
       
     );
   }
