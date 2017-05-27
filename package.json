@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.1",
+<<<<<<< HEAD
+=======
+    "cors": "^2.8.3",
+>>>>>>> eb1b7f23e1423c25403e282ab728535976d77862
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"
