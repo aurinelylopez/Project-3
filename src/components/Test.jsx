@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Baoquestion from '../components/Baoquestion';
 import Baoscore from '../components/Baoscore';
 import answerchoices from '../components/answerchoices';
@@ -21,13 +22,13 @@ function Test(props) {
   }
 
   Test.propTypes = {
-    answer: React.PropTypes.string,
-    answerChoices: React.PropTypes.array,
-    counter: React.PropTypes.number,
-    question: React.PropTypes.string,
-    questionId: React.PropTypes.number,
-    questionTotal: React.PropTypes.number,
-    onAnswerSelected: React.PropTypes.func
+    answer: PropTypes.string,
+    answerChoices: PropTypes.array,
+    counter: PropTypes.number,
+    question: PropTypes.string,
+    questionId: PropTypes.number,
+    questionTotal: PropTypes.number,
+    onAnswerSelected: PropTypes.func
   };
 
   export default Test;

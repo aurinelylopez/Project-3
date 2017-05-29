@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import './App.css';
-import BaoQuestion from './components/Baoquestion';
+import Baoquestion from './components/Baoquestion';
 //component that will render question
 import quizTime from './api/quiztime';
 //api component containing the questions
 import BaoScore from './components/Baoscore';
 //component containing quiz score
-import answerChoices from './components/answerchoices';
+import AnswerChoices from './components/answerchoices';
 //component created to render multiple choices
 import Test from './components/Test.jsx';
 import Score from './components/score';
@@ -31,7 +32,7 @@ class App extends Component {
       baoQuestionId: 1,
 //question set to 1 at beginning of the game
       baoQuestion: '',
-//question content
+//question content      
       answerOptions: [],
 //array with multiple choice options
       answer: '',
@@ -155,11 +156,13 @@ class App extends Component {
         <div className="App-header">
         <h2>BAO BAO BAO</h2>
         </div>
-        {this.state.result ? this.renderResult() : this.renderTest()}      </div>      
+        {this.state.result ? this.renderResult() : this.renderTest()}
+        <Baoquestion />
+        <AnswerChoices />
+        <BaoScore />
+      </div>      
     );
   }
 
 }
 export default App;
-
-ReactDOM.render(<Aurinely/>, document.getElementById('test'))

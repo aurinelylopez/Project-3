@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 function Score(props) {
@@ -11,7 +12,7 @@ function Score(props) {
       transitionEnterTimeout={500}
       transitionLeaveTimeout={300}>
     >
-      <div>
+      <div key="transition-group-content">
         You prefer <strong>{props.testScore}</strong>!
       </div>
     </CSSTransitionGroup>
@@ -21,7 +22,7 @@ function Score(props) {
 }
 
 Score.propTypes = {
-  quizResult: React.PropTypes.string.isRequired,
+  quizResult: PropTypes.string,
 };
 
 export default Score;
