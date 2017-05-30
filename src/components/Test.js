@@ -6,13 +6,14 @@ import PropTypes from 'prop-types';
 
 function Test(props){
 
-  function getAnswer(props) {
+  function getAnswer(key) {
     return (
       <AnswerChoices
+      key={key.content}
       questionId={props.questionId}
       onAnswerSelected={props.onAnswerSelected}
       answer={props.answer}
-      AnswerChoices={props.content} 
+      answerOptions={key.content}
       />
     )};
 
@@ -25,7 +26,6 @@ function Test(props){
          <Baoquestion content={props.question} />
          <ul className="answerchoices">
          {props.answerchoices.map(getAnswer)}
-           <h1>Look at you.. :)</h1>
          </ul>
        </div>
     );
