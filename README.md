@@ -6,7 +6,7 @@
 ----------
 There will be essentially three players and one Grandmaster player. In each round the players will rotate and decide who is the next Grandmaster player
 
-##Mockups & Wireframaes
+##Mockups & Wireframes
 ----------
 
 ![Alt Image](http://i.imgur.com/gpznN5I.png)
