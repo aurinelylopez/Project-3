@@ -1,12 +1,12 @@
-#BAO! - PROJECT #3
+# BAO! - PROJECT #3
 -----------
-##1-BAO is a multiple choice quiz . In each round, players will be answering a multiple choice questions choosen randomly. Players will each have to answer the question in the allocated input field correctly to win.
+## 1-BAO is a multiple choice quiz . In each round, players will be answering a multiple choice questions choosen randomly. Players will each have to answer the question in the allocated input field correctly to win.
 
-###Instructions
+### Instructions
 ----------
 Upon loading, questions will render and the user selects answer desired.
 
-##Mockups & Wireframes
+## Mockups & Wireframes
 ----------
 
 ![Alt Image](http://i.imgur.com/gpznN5I.png)
@@ -15,15 +15,15 @@ Upon loading, questions will render and the user selects answer desired.
 
 
 
-##User Stories
+## User Stories
 ----------
 As a user, I want a question to render, to be able to answer the multiple choice question and to have a final result.
 
-##ERD
+## ERD
 ----------
 ![Alt Image](http://i.imgur.com/iBNxhqE.png)
 
-##Components and their global purpose
+## Components and their global purpose
 ----------
 Test ——>Container component for questions, answers and score.
 
@@ -33,7 +33,7 @@ Answerchoices —> component responsible for rendering the answers available to 
 
 Baoscore —> component responsible for rendering and keeping track of score.
 
-##Technologies Used / NPM Modules
+## Technologies Used / NPM Modules
 -----------
 * CSS
 * JavaScript
@@ -51,10 +51,10 @@ Baoscore —> component responsible for rendering and keeping track of score.
         * React-Router - Declarative routing for React.
         * Create-React-App - 
 
-##Download Project & Install
+## Download Project & Install
 ----------------
 Git clone or download this project and cd into via terminal. On your terminal run npm run dev, app should be available on localhost:3000 
 
-##Tutorials and other resources
+## Tutorials and other resources
 ----------------
 https://github.com/bonham000/react-quiz-app
