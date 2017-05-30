@@ -4,7 +4,7 @@
 
 ###Instructions
 ----------
-There will be essentially three players and one Grandmaster player. In each round the players will rotate and decide who is the next Grandmaster player
+Upon loading, questions will render and the user selects answer desired.
 
 ##Mockups & Wireframes
 ----------
