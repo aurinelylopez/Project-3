@@ -1,13 +1,21 @@
 import React from 'react';
 import Baoquestion from '../components/Baoquestion';
 import Baoscore from '../components/Baoscore';
-import answerchoices from '../components/answerchoices';
+import AnswerChoices from '../components/answerchoices';
 import PropTypes from 'prop-types';
 
+function Test(props){
 
+  function getAnswer(props) {
+    return (
+      <AnswerChoices
+      questionId={props.questionId}
+      onAnswerSelected={props.onAnswerSelected}
+      answer={props.answer}
+      AnswerChoices={props.content} 
+      />
+    )};
 
-
-function Test(props) {
     return (
        <div className="test">
          <Baoscore
@@ -16,6 +24,7 @@ function Test(props) {
          />
          <Baoquestion content={props.question} />
          <ul className="answerchoices">
+         {props.answerchoices.map(getAnswer)}
            <h1>Look at you.. :)</h1>
          </ul>
        </div>
@@ -24,7 +33,7 @@ function Test(props) {
 
   Test.propTypes = {
     answer: PropTypes.string,
-    answerChoices: PropTypes.array,
+    AnswerChoices: PropTypes.array,
     counter: PropTypes.number,
     question: PropTypes.string,
     questionId: PropTypes.number,

@@ -10,7 +10,7 @@ import BaoScore from './components/Baoscore';
 //component containing quiz score
 import AnswerChoices from './components/answerchoices';
 //component created to render multiple choices
-import Test from './components/Test.jsx';
+import Test from './components/Test.js';
 import Aurinely from './components/demo';
 import PropTypes from 'prop-types';
 //component created for actual test div
@@ -156,9 +156,6 @@ class App extends Component {
         <h2>BAO BAO BAO</h2>
         </div>
         {this.state.result ? this.renderResult() : this.renderTest()}
-        <Baoquestion />
-        <AnswerChoices />
-        <BaoScore />
               </div>      
     );
   }
