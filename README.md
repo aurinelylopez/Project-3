@@ -1,6 +1,6 @@
 #BAO! - PROJECT #3
 -----------
-###1-BAO is a multiple choice quiz . In each round, players will be answering a multiple choice questions choosen randomly. Players will each have to answer the question in the allocated input field correctly to win.
+##1-BAO is a multiple choice quiz . In each round, players will be answering a multiple choice questions choosen randomly. Players will each have to answer the question in the allocated input field correctly to win.
 
 ###Instructions
 ----------
@@ -33,7 +33,7 @@ Answerchoices —> component responsible for rendering the answers available to 
 
 Baoscore —> component responsible for rendering and keeping track of score.
 
-Technologies Used / NPM Modules
+##Technologies Used / NPM Modules
 -----------
 * CSS
 * JavaScript
