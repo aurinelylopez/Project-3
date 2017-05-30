@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import update from 'react-addons-update';
 import './App.css';
 import Baoquestion from './components/Baoquestion';
 //component that will render question
