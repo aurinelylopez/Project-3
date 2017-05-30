@@ -51,6 +51,10 @@ Technologies Used / NPM Modules
         * React-Router - Declarative routing for React.
         * Create-React-App - 
 
-Download Project & Install
+##Download Project & Install
 ----------------
 Git clone or download this project and cd into via terminal. On your terminal run npm run dev, app should be available on localhost:3000 
+
+##Tutorials and other resources
+----------------
+https://github.com/bonham000/react-quiz-app
