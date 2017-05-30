@@ -25,13 +25,13 @@ As a user, I want a question to render, to be able to answer the multiple choice
 
 ##Components and their global purpose
 ----------
-(Placeholder) Title and Description ——>Just the app’s name and it’s purpose.
+Test ——>Container component for questions, answers and score.
 
-(Placeholder)——>Holds the text describing how to play the game.
+Baoquestion——>component rendering quiz questions.
 
-(Placeholder) div containing random BAO card—> 
+Answerchoices —> component responsible for rendering the answers available to the user.
 
-(Placeholder) divs containing cards that will be selected by grandmaster.
+Baoscore —> component responsible for rendering and keeping track of score.
 
 Technologies Used / NPM Modules
 -----------
