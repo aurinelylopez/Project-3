@@ -46,7 +46,7 @@ class App extends Component {
 
     };
 
-    this.handleThisAnswerSelected = this.handleThisAnswerSelected.bind(this);
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
 //will bind answers to this
   }
 
@@ -80,7 +80,7 @@ class App extends Component {
     return array;
   };
 
-  handleThisAnswerSelected(event) {
+  handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
 
     if (this.state.baoQuestionId < quizTime.length) {
@@ -140,6 +140,7 @@ class App extends Component {
         question={this.state.question}
         questionTotal={this.state.answerChoices.length}
         onAnswerSelected={this.handleAnswerSelected}
+        answerOptions={this.state.answerOptions}
       />
     );
   }

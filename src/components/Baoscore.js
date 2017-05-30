@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
   function BaoScore(props) {
     return (
       <div className="BaoScore">
-        Question <span>{props.counter}</span> of <span>20</span>
+        Question <span>{props.counter}</span> of <span>5</span>
       </div>
     );
   }
