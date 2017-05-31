@@ -132,7 +132,6 @@ class App extends Component {
         <div className="App-header">
           <h2>BAO BAO BAO</h2>
         </div>
-          {this.renderTest()}
         <QNA />
       </div>
       
