@@ -10,6 +10,7 @@ class Qna extends Component{
 			quiz: []
 		}
 		this.componentDidMount = this.componentDidMount.bind(this)
+		
 	}
 	componentDidMount(){
 		console.log(this.props.quiz)
