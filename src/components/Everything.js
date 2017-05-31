@@ -7,7 +7,6 @@ class Everything extends Component {
             super(props);
             this.state = {
                 Toggle: true,
-                quiz_id : []
             };
             this.handleEdit = this.handleEdit.bind(this);
             this.handleDelete = this.handleDelete.bind(this);
@@ -16,6 +15,7 @@ class Everything extends Component {
         handleEdit(){
             this.setState(prevState => ({
                 Toggle: !prevState.Toggle
+
             }))
         }
         handleDelete(){
@@ -30,6 +30,7 @@ class Everything extends Component {
         // location.reload();
         //     }            
         handleSubmit(){
+
             this.setState(prevState => ({
                 Toggle: !prevState.Toggle
             }))
@@ -53,6 +54,7 @@ class Everything extends Component {
 	else {
         return ( 
             <div>
+            {this.props.id}
                 <h3 className="question">{this.props.quiz.question}</h3>
                 <input defaultValue={this.props.quiz.a} />
                 <input defaultValue={this.props.quiz.b} />

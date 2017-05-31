@@ -21,7 +21,6 @@ class Qna extends Component{
 			console.log(res)
 			this.setState({
 				quiz: res.data
-
 			})
 		})
 	}
