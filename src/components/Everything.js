@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class Everything extends Component {
         constructor(props) {
             super(props);
             this.state = {
-                Toggle: true
+                Toggle: true,
+                quiz_id : []
             };
             this.handleEdit = this.handleEdit.bind(this);
             this.handleDelete = this.handleDelete.bind(this);
@@ -21,6 +23,12 @@ class Everything extends Component {
                 Toggle: !prevState.Toggle
             }))
         }
+        // handleDelete(){
+        // let id =
+        // axios.delete("https://afternoon-journey-45420.herokuapp.com" + id)
+        // $(this).parent().remove();
+        // location.reload();
+        //     }            
         handleSubmit(){
             this.setState(prevState => ({
                 Toggle: !prevState.Toggle
