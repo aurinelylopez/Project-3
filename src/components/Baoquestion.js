@@ -1,5 +1,6 @@
-import React from 'react';
-//importing react 
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
   function Baoquestion(props) {
     return (
@@ -8,7 +9,7 @@ import React from 'react';
   }
 
   Baoquestion.propTypes = {
-    content: React.PropTypes.string.isRequired
+    content: PropTypes.string,
   };
 
   export default Baoquestion;

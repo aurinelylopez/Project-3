@@ -1,31 +1,18 @@
-import React from 'react';
-import Baoquestion from '../components/Baoquestion';
-import Baoscore from '../components/Baoscore';
-import answerchoices from '../components/answerchoices';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-function Test(props) {
+
+  function BaoScore(props) {
     return (
-       <div className="test">
-         {/*<QuestionCount
-           counter={props.questionId}
-           total={props.questionTotal}
-         />
-         <Question content={props.question} />*/}
-         <ul className="answerchoices">
-           <h1>Look at you.. :)</h1>
-         </ul>
-       </div>
+      <div className="BaoScore">
+        Question <span>{props.counter}</span> of <span>20</span>
+      </div>
     );
   }
 
-  Test.propTypes = {
-    answer: React.PropTypes.string,
-    answerChoices: React.PropTypes.array,
-    counter: React.PropTypes.number,
-    question: React.PropTypes.string,
-    questionId: React.PropTypes.number,
-    questionTotal: React.PropTypes.number,
-    onAnswerSelected: React.PropTypes.func
+  BaoScore.propTypes = {
+    counter: PropTypes.number,
+    total: PropTypes.number,
   };
 
-  export default Test;
+  export default BaoScore;

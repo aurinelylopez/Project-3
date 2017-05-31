@@ -1,23 +1,18 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import PropTypes from 'prop-types';
+
 
 function Score(props) {
 
   return (
-    <ReactCSSTransitionGroup
-      className="container result"
-      component="div"
-    >
-      <div>
-        You prefer <strong>{props.testScore}</strong>!
-      </div>
-    </ReactCSSTransitionGroup>
+    <div>
+    </div>
   );
 
 }
 
 Score.propTypes = {
-  quizResult: React.PropTypes.string.isRequired,
+  quizResult: PropTypes.string,
 };
 
 export default Score;

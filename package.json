@@ -4,13 +4,19 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.1",
-<<<<<<< HEAD
-=======
+
+
     "cors": "^2.8.3",
->>>>>>> eb1b7f23e1423c25403e282ab728535976d77862
+
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"
+
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-transition-group": "^1.1.3"
+
   },
   "devDependencies": {
     "react-scripts": "1.0.6",
