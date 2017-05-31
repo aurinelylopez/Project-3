@@ -15,13 +15,13 @@ class Everything extends Component {
         handleEdit(){
             this.setState(prevState => ({
                 Toggle: !prevState.Toggle
-
             }))
         }
         handleDelete(){
-            this.setState(prevState => ({
-                Toggle: !prevState.Toggle
-            }))
+            // this.setState(prevState => ({
+            //     Toggle: !prevState.Toggle
+            // }))
+            let id = this.props.id
         }
         // handleDelete(){
         // let id =
@@ -29,12 +29,23 @@ class Everything extends Component {
         // $(this).parent().remove();
         // location.reload();
         //     }            
+        // handleSubmit(){
+        //     this.setState(prevState => ({
+        //         Toggle: !prevState.Toggle
+        //     }))
+        // }
         handleSubmit(){
-
-            this.setState(prevState => ({
-                Toggle: !prevState.Toggle
-            }))
-        }
+            // this.setState(prevState => ({
+            //     Toggle: !prevState.Toggle
+            // }))
+                let id = this.props.id
+                axios.put('https://afternoon-journey-45420.herokuapp.com/' + id, {
+                a: this.props.quiz.a,
+                b: this.props.quiz.b,
+                c: this.props.quiz.c,
+                correct: this.props.quiz.correct
+            }).catch((err)=> {return err});
+}
 	render(){ 
 
 			console.log('here', this.props)
