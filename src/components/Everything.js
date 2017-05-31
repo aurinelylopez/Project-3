@@ -8,10 +8,11 @@ class Everything extends Component {
 
 		return(
 			<div className="container">
-				<div className="question">{this.props.quiz.question}</div>
-				<div>{this.props.quiz.a} </div>
-				<div>{this.props.quiz.b} </div>
-				<div>{this.props.quiz.c} </div>
+				<ul className="question">{this.props.quiz.question}>
+				    <li>{this.props.quiz.a} </li>
+				    <li>{this.props.quiz.b} </li>
+				    <li>{this.props.quiz.c} </li>
+                </ul>
 			</div>
 			)
 	}
