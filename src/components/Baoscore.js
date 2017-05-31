@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
+
   function BaoScore(props) {
     return (
       <div className="BaoScore">

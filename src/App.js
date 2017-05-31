@@ -11,12 +11,52 @@ import BaoScore from './components/Baoscore';
 import AnswerChoices from './components/answerchoices';
 //component created to render multiple choices
 import Test from './components/Test.jsx';
+
+import Everything from './components/Everything';
+import QNA from './components/QNA';
+import {
+  BrowserRouter as Router,
+  Route, 
+  Link,
+  NavLink,
+} from 'react-router-dom';
+
+let Home = () => { return <div>Home wya</div>} /*2 routes '/', n '/home'*/
+
+let About = () => { return <div>Aboutus</div>} /*when u click this pops up*/
+
+let Contacts = () => { return <div>Contacts us</div>}
+/* is Error a reserved word in react */
+let Errors = () => { return <div>Welcome to Mars👽👹</div>}
+
+let Nav = () => {
+  return (<ul id="target">
+          <li id="home"><NavLink to="/" className="wh">Homeskillet</NavLink></li>
+          </ul>)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import Aurinely from './components/demo';
 import PropTypes from 'prop-types';
 //component created for actual test div
 import axios from 'axios';
 //transition that for some reason is now not working
-
 
 
 class App extends Component {
@@ -159,15 +199,26 @@ renderRandomArray() {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-        <h2>BAO BAO BAO</h2>
+
+      <Router>
+        <div className="App">
+         <div className="App-header">
+          <h2>BAO BAO BAO</h2>
+          </div>{this.state.result ? this.renderResult() : this.renderTest()}
+          <Everything />
+          <QNA />
+          <Link to="/home" className="target">Homework</Link>&nbsp;&nbsp;
+          <Link to="/about">About</Link>&nbsp;&nbsp;
+          <Link to="/contacts">Contacts</Link>&nbsp;&nbsp;
+
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/contacts" component={Contacts}/>
+        {/*  <Route component={Errors}/>*/}
         </div>
-        {this.state.result ? this.renderResult() : this.renderTest()}
-        <Baoquestion />
-        <AnswerChoices />
-        <BaoScore />
-              </div>      
+      </Router>
+      
+
     );
   }
 
