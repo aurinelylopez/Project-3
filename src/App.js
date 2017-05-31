@@ -1,80 +1,56 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import update from 'react-addons-update';
 import './App.css';
 import Baoquestion from './components/Baoquestion';
-//component that will render question
-import quizTime from './api/quiztime';
-import Score from './components/score';
-//api component containing the questions
-import BaoScore from './components/Baoscore';
-//component containing quiz score
-import AnswerChoices from './components/answerchoices';
-//component created to render multiple choices
-import Test from './components/Test.js';
-import Aurinely from './components/demo';
-import PropTypes from 'prop-types';
-//component created for actual test div
-import axios from 'axios';
-//transition that for some reason is now not working
-
-
+import quiztime from './api/quiztime';
+import Baoscore from './components/Baoscore';
+import answerChoices from './components/answerchoices';
+import Test from './components/Test';
+import Everything from './components/Everything';
+import QNA from './components/QNA';
 
 class App extends Component {
-//extending component class
- constructor(props) {
+
+  constructor(props) {
     super(props);
-//calling parent component
 
     this.state = {
       counter: 0,
-//counter set to zero at beginning of game
-      baoQuestionId: 1,
-//question set to 1 at beginning of the game
-      baoQuestion: '',
-//question content
+      questionId: 1,
+      question: '',
       answerOptions: [],
-//array with multiple choice options
       answer: '',
-//actual answer content
-      Baoscore: {
-//keeping count
+      answersCount: {
         User: 0,
-//user score set to zero at beginning of the game
+
       },
       result: ''
-
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
-//will bind answers to this
   }
 
   componentWillMount() {
-//initial lifecycle method called before initial render
-    const randomAnswerChoices = quizTime.map((question) => this.randomArray(question.answers));
-//will shuffle questions and answers..    
+    const shuffledAnswerChoices = quiztime.map((question) => this.shuffleArray(question.answers));
     this.setState({
-      question: quizTime[0].question,
-//
-      answerChoices: randomAnswerChoices[0]
+      question: quiztime[0].question,
+      answerChoices: shuffledAnswerChoices[0]
     });
   }
 
-  randomArray(array) {
-    let presentIndex = array.length, currentValue, randomIndex;
+  shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
-    while (0 !== presentIndex) {
+    while (0 !== currentIndex) {
 
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * presentIndex);
-      presentIndex -= 1;
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
 
       // And swap it with the current element.
-      currentValue = array[presentIndex];
-      array[presentIndex] = array[randomIndex];
-      array[randomIndex] = currentValue;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
 
     return array;
@@ -83,38 +59,38 @@ class App extends Component {
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
 
-    if (this.state.baoQuestionId < quizTime.length) {
-        setTimeout(() => this.setNextBaoQuestion(), 200);
+    if (this.state.questionId < quiztime.length) {
+        setTimeout(() => this.setNextQuestion(), 300);
     } else {
-        setTimeout(() => this.setResults(this.getResults()), 200);
+        setTimeout(() => this.setResults(this.getResults()), 300);
     }
   }
 
-  setThisUserAnswer(answer) {
-   const updatedAnswersCount = (this.state.answersCount, {
+  setUserAnswer(answer) {
+    {/*const updatedAnswersCount = update(this.state.answersCount, {
       [answer]: {$apply: (currentValue) => currentValue + 1}
     });
 
     this.setState({
         answersCount: updatedAnswersCount,
         answer: answer
-    });
+    });*/}
   }
 
-  setThisToNextQuestion() {
+  setNextQuestion() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
 
     this.setState({
-        BaoScore: BaoScore,
-        // QuestionId: QuestionId,
-        BaoQuestion: quizTime[counter].BaoQuestion,
-        answerOptions: quizTime[counter].answers,
+        counter: counter,
+        questionId: questionId,
+        question: quiztime[counter].question,
+        answerOptions: quiztime[counter].answers,
         answer: ''
     });
   }
 
-  getTheseScores() {
+  getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
@@ -140,14 +116,13 @@ class App extends Component {
         question={this.state.question}
         questionTotal={this.state.answerChoices.length}
         onAnswerSelected={this.handleAnswerSelected}
-        answerOptions={this.state.answerOptions}
       />
     );
   }
 
-  renderScore() {
+  renderResult() {
     return (
-    <Score testScore={this.state.score} />
+      {/*<Result testResult={this.state.result} />*/}
     );
   }
 
@@ -155,12 +130,15 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-        <h2>BAO BAO BAO</h2>
+          <h2>BAO BAO BAO</h2>
         </div>
-        {this.state.result ? this.renderResult() : this.renderTest()}
-              </div>      
+          {this.renderTest()}
+        <QNA />
+      </div>
+      
     );
   }
 
 }
+
 export default App;
