@@ -8,12 +8,12 @@ import {
   NavLink
 } from 'react-router-dom';
 import './App.css';
-import Baoquestion from './components/Baoquestion';1
+import Baoquestion from './components/Baoquestion';
 import quiztime from './api/quiztime';
 import Baoscore from './components/Baoscore';
 import answerChoices from './components/answerchoices';
 import Test from './components/Test';
-import Post from './components/POST'
+import Post from './components/Post'
 import Everything from './components/Everything';
 let Create = () => {return <div>Create compoment for axios.post</div>}
 let Quiz = () => {return <div><QNA /></div>}
