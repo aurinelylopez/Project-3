@@ -17,14 +17,16 @@ class Everything extends Component {
                 Toggle: !prevState.Toggle
             }))
         }
-        handleDelete(){
-            this.setState(prevState => ({
-                Toggle: !prevState.Toggle
-            }))
-            let id = this.props.id
+        handleDelete(id){
             axios.delete('https://afternoon-journey-45420.herokuapp.com/' + id, {
-                
+                id: id
             })
+            .then((res) => {
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
         }
         // handleDelete(){
         // let id =
