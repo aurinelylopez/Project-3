@@ -54,9 +54,9 @@ class Everything extends Component {
 
   handleSubmit(e, id) {
     e.preventDefault();
-    this.props.editQuiz(this.quiz.a.value, this.quiz.b.value,this.genre.value, this.short.value, this.long.value, id)
+    this.props.editQuiz(this.props.quiz.a.value, this.props.quiz.b.value,this.props.quiz.c.value, id)
     this.setState({
-      edit: false
+      Toggle: true
     })
   }
 	render(){ 
@@ -83,7 +83,7 @@ class Everything extends Component {
                 <input defaultValue={this.props.quiz.a} />
                 <input defaultValue={this.props.quiz.b} />
                 <input defaultValue={this.props.quiz.c} />
-                <button className="submit" onClick={this.handleSubmit}>Submit</button>
+                <button onClick={(e)=>this.handleSubmit(e,this.props.id)}>Submit</button>
             </div>
         )
     }
