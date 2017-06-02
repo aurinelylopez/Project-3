@@ -39,18 +39,26 @@ class Everything extends Component {
         //         Toggle: !prevState.Toggle
         //     }))
         // }
-        handleSubmit(){
-            // this.setState(prevState => ({
-            //     Toggle: !prevState.Toggle
-            // }))
-                let id = this.props.id
-                axios.put('https://afternoon-journey-45420.herokuapp.com/' + id, {
-                a: this.props.quiz.a,
-                b: this.props.quiz.b,
-                c: this.props.quiz.c,
-                correct: this.props.quiz.correct
-            }).catch((err)=> {return err});
-}
+//         handleSubmit(){
+//             // this.setState(prevState => ({
+//             //     Toggle: !prevState.Toggle
+//             // }))
+//                 let id = this.props.id
+//                 axios.put('https://afternoon-journey-45420.herokuapp.com/' + id, {
+//                 a: this.props.quiz.a,
+//                 b: this.props.quiz.b,
+//                 c: this.props.quiz.c,
+//                 correct: this.props.quiz.correct
+//             }).catch((err)=> {return err});
+// }
+
+  handleSubmit(e, id) {
+    e.preventDefault();
+    this.props.editQuiz(this.quiz.a.value, this.quiz.b.value,this.genre.value, this.short.value, this.long.value, id)
+    this.setState({
+      edit: false
+    })
+  }
 	render(){ 
 
 			console.log('here', this.props)
@@ -62,8 +70,8 @@ class Everything extends Component {
 				    <li>{this.props.quiz.b} </li>
 				    <li>{this.props.quiz.c} </li>
                 </ul>
-                <button className="edit" onClick={this.handleEdit}>Edit</button>
-                <button className="delete" onClick={this.handleDelete}>Delete</button>
+                <button onClick={()=>this.handleEdit(this.props.id)}>Edit</button>
+                <button onClick={()=>this.handleDelete(this.props.id)}>Delete</button>
 			</div>
 			)
            } 
